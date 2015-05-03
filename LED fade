@@ -1,0 +1,27 @@
+/*
+the LED fades for 20 sedconds 
+
+The circit:
+LED blub long leg pluged into pin 9, short leg pluegged into
+220 ohm, which is plugged into grd.
+
+
+*/
+
+int led = 9;  //LED assigned to pin 9
+int brightness = 0; //place holder for brightness of LED
+int fadeAmount = 5; // controls how much brightness is added or taken away
+
+void setup(){
+  pinMode(led, OUTPUT); 
+  
+}
+
+void loop(){
+
+analogWrite(led, brightness); //asissigns value to pin
+brightness = brightness + fadeAmount; //  0 = 0 +5
+if (brightness == 255 || brightness ==255)
+  {fadeAmount = -fadeAmount ; }
+  delay(20);
+}
